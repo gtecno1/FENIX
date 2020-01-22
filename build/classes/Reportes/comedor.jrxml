@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comedor" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9fe5bffd-5cb5-48a5-9184-405894d79ee5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     comedor.`idc` AS comedor_idc,
+     comedor.`Ced` AS comedor_Ced,
+     comedor.`nomb` AS comedor_nomb,
+     comedor.`Apelli` AS comedor_Apelli,
+     comedor.`fecha` AS comedor_fecha
+FROM
+     `comedor` comedor]]>
+	</queryString>
+	<field name="comedor_idc" class="java.lang.Integer"/>
+	<field name="comedor_Ced" class="java.lang.Integer"/>
+	<field name="comedor_nomb" class="java.lang.String"/>
+	<field name="comedor_Apelli" class="java.lang.String"/>
+	<field name="comedor_fecha" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="12" width="451" height="95" backcolor="#FFFFFF" uuid="60e35282-ac56-40a9-9083-1c5a4aef4b91"/>
+				<staticText>
+					<reportElement style="Title" x="18" y="0" width="433" height="30" forecolor="#000000" uuid="fbf2694d-59eb-49bc-8f68-313a7a465760"/>
+					<textElement>
+						<font fontName="Tin Doghouse" size="20" isBold="false"/>
+					</textElement>
+					<text><![CDATA[   Coordinación Nacional de Alimentación Escolar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="140" y="59" width="207" height="29" forecolor="#000000" uuid="7b31c870-43c1-4a63-ad93-ae6efaa8e599"/>
+					<textElement>
+						<font fontName="Tin Doghouse" size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reporte del Comedor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="130" y="30" width="249" height="29" forecolor="#000000" uuid="392b8a8a-85ac-4b96-8f1f-d9debb4cf6d8"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[     U.E.N Las Piedras]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="2" y="122" width="553" height="10" forecolor="#000000" backcolor="#CCCCCC" uuid="d805f123-1218-4cb4-b111-bdb7663ba4ea"/>
+			</frame>
+			<image>
+				<reportElement x="464" y="0" width="89" height="95" uuid="5a68cf2e-97ad-47d6-8149-7e7cd5ecd1f6"/>
+				<imageExpression><![CDATA["D:\\descarga\\h.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="459" y="95" width="81" height="12" forecolor="#000000" uuid="604b6770-1009-4690-ad2d-7b72e55a81f8"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="111" height="18" forecolor="#000000" uuid="bab58dca-1269-4377-a0dc-d0d528192bec"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="7" width="111" height="18" forecolor="#000000" uuid="414c5a5e-bd63-4ba1-8e8d-db4268483979"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEDULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000" uuid="5e09ab33-2f9d-4552-b51a-b8708bdcd285"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000" uuid="3336b6ca-efc7-447b-857b-cf94c250ed64"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000" uuid="536abd5c-6bdb-4a28-a12a-51fdb118218b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE INGRESO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="8fd5d0f9-5430-4215-9f8c-5a2f37602cd2"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="111" height="18" uuid="4bdaff73-a118-44a6-b59e-127ada789142"/>
+					<textElement>
+						<font fontName="Tahoma" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comedor_idc}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="111" y="0" width="111" height="18" uuid="15c6f749-96a9-4c06-97ff-54405069227a"/>
+					<textElement>
+						<font fontName="Tahoma" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comedor_Ced}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="222" y="0" width="111" height="18" uuid="2a6d4ca2-aff5-4a8b-a029-57a7ef04eafa"/>
+					<textElement>
+						<font fontName="Tahoma" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comedor_nomb}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="333" y="0" width="111" height="18" uuid="09c2d835-8d20-4b5b-9112-431f179a607a"/>
+					<textElement>
+						<font fontName="Tahoma" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comedor_Apelli}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="444" y="0" width="111" height="18" uuid="a1dcc770-a5eb-4d93-aa0e-e12d925faac2"/>
+					<textElement>
+						<font fontName="Tahoma" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comedor_fecha}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="ae461737-f338-4f47-8082-9b9188bce3ef"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#CCCCCC" uuid="c439687e-24ea-4f28-b43c-67fd584727d0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="131c0a70-70c8-4524-8f00-5386f3a7e975"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="0b1fe8d0-2c7e-4f88-bc77-49e6348394c5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="511462c2-1b70-4aed-9a73-281e3170130b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
